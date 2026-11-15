@@ -1,0 +1,64 @@
+/* Intercede's pages: ivory and gold, like the app. Nothing loaded from anywhere else. */
+:root {
+    --ivory: #fbf6ea;
+    --parchment: #f3e7cb;
+    --glow: #fff4cf;
+    --gold: #a97b24;
+    --gold-soft: #e8cb84;
+    --ink: #3a2f1e;
+    --ink-soft: #7a6747;
+    --card: rgba(255, 255, 255, 0.62);
+    --line: rgba(184, 137, 46, 0.28);
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ivory: #15110b;
+        --parchment: #241b10;
+        --glow: #3a2a10;
+        --gold: #e3b65a;
+        --gold-soft: #8a6420;
+        --ink: #f5ecd9;
+        --ink-soft: #bfae8c;
+        --card: rgba(42, 32, 20, 0.62);
+        --line: rgba(227, 182, 90, 0.25);
+    }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--ink);
+    background:
+        radial-gradient(ellipse 90% 45% at 50% -5%, var(--glow), transparent 70%),
+        radial-gradient(circle at 100% 85%, color-mix(in srgb, var(--gold-soft) 35%, transparent), transparent 40%),
+        var(--ivory);
+    background-attachment: fixed;
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+main { max-width: 680px; margin: 0 auto; padding: 48px 20px 64px; }
+h1, h2, h3, .serif { font-family: ui-serif, "New York", Georgia, "Times New Roman", serif; font-weight: 500; }
+h1 { font-size: 2.4rem; line-height: 1.15; margin: 0 0 8px; }
+h2 { font-size: 1.45rem; margin: 36px 0 8px; }
+h3 { font-size: 1.12rem; margin: 22px 0 4px; }
+p, li { color: var(--ink); }
+.lede { font-family: ui-serif, "New York", Georgia, serif; font-size: 1.25rem; color: var(--ink-soft); margin: 0 0 28px; }
+.muted { color: var(--ink-soft); font-size: 0.92rem; }
+a { color: var(--gold); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 20px 22px;
+    margin: 16px 0;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+.card h2:first-child, .card h3:first-child { margin-top: 0; }
+nav { display: flex; gap: 18px; flex-wrap: wrap; margin: 0 0 36px; font-size: 0.95rem; }
+nav a { text-decoration: none; }
+nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+.mark { width: 64px; height: 64px; border-radius: 15px; display: block; margin: 0 0 20px; box-shadow: 0 6px 24px rgba(169, 123, 36, 0.25); }
+ul { padding-left: 1.2em; }
+li { margin: 4px 0; }
+footer { margin-top: 48px; font-size: 0.85rem; color: var(--ink-soft); }
